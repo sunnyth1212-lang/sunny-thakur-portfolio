@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunny Thakur — Admin Control Studio</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- AMBIENT BACKGROUND GLOW -->
+  <div class="admin-ambient-glow glow-top" aria-hidden="true"></div>
+  <div class="admin-ambient-glow glow-bottom" aria-hidden="true"></div>
+
+  <!-- PIN AUTH MODAL -->
+  <div class="auth-overlay" id="auth-overlay">
+    <div class="auth-card">
+      <div class="auth-card-inner">
+        <div class="auth-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        </div>
+        <h2 class="auth-title">Admin Studio</h2>
+        <p class="auth-desc">Enter your 4-digit security PIN to access the portfolio editor.</p>
+        <form id="pin-auth-form" class="auth-form">
+          <div class="pin-inputs-wrap">
+            <input type="password" id="pin-input" maxlength="8" placeholder="Enter PIN (Default: 1234)" autofocus autocomplete="off">
+          </div>
+          <button type="submit" class="admin-btn admin-btn-primary" style="width: 100%;">
+            <span>Unlock Admin Panel</span>
+          </button>
+          <div id="auth-error-msg" class="auth-error-msg">Incorrect PIN. Please try again.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN ADMIN APP WRAPPER -->
+  <div class="admin-app" id="admin-app">
+    <!-- TOP HEADER -->
+    <header class="admin-header">
+      <div class="header-left">
+        <div class="admin-brand-badge">
+          <span class="brand-dot"></span>
+          <span class="brand-title">Sunny Thakur</span>
+          <span class="brand-sub">Studio Control</span>
+        </div>
+        <div class="server-status-pill" id="server-status-pill">
+          <span class="status-indicator-dot"></span>
+          <span id="server-status-text">Checking server...</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <a href="index.html" target="_blank" class="admin-btn admin-btn-outline" title="Open live portfolio in a new tab">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          <span>View Live Site</span>
+        </a>
+        <button type="button" class="admin-btn admin-btn-save" id="global-save-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+          <span id="save-btn-text">Save Changes</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ADMIN LAYOUT BODY -->
+    <div class="admin-body">
+      <!-- SIDEBAR TABS -->
+      <aside class="admin-sidebar">
+        <nav class="sidebar-nav">
+          <button class="nav-tab active" data-tab="tab-projects">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+            <span>Projects & Reels</span>
+            <span class="tab-badge" id="badge-projects-count">6</span>
+          </button>
+
+          <button class="nav-tab" data-tab="tab-inquiries">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>Leads &amp; Inquiries</span>
+            <span class="tab-badge badge-leads" id="badge-inquiries-count">0</span>
+          </button>
+
+          <button class="nav-tab" data-tab="tab-brand">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            <span>Brand & Contact</span>
+          </button>
+
+          <button class="nav-tab" data-tab="tab-services">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            <span>Services</span>
+            <span class="tab-badge" id="badge-services-count">4</span>
+          </button>
+
+          <button class="nav-tab" data-tab="tab-stats">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            <span>Stats & Showreel</span>
+          </button>
+
+          <button class="nav-tab" data-tab="tab-reviews">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            <span>Reviews & FAQ</span>
+          </button>
+
+          <button class="nav-tab" data-tab="tab-backup">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>Export & Backup</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="sidebar-info-card">
+            <div class="info-card-title">Pro Tip</div>
+            <div class="info-card-text">Changes save automatically to <code>data.js</code> on your computer when clicking "Save Changes".</div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- TAB CONTENT AREA -->
+      <main class="admin-main">
+
+        <!-- ========================================== -->
+        <!-- TAB 1: PROJECTS & REELS -->
+        <!-- ========================================== -->
+        <section class="tab-pane active" id="tab-projects">
+          <div class="section-title-bar">
+            <div>
+              <h2 class="pane-title">Featured Projects & Reels</h2>
+              <p class="pane-subtitle">Manage 9:16 short-form video reels, change their display order, or add new projects.</p>
+            </div>
+            <button type="button" class="admin-btn admin-btn-primary" id="btn-open-add-project">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              <span>Add New Reel</span>
+            </button>
+          </div>
+
+          <div class="projects-list-container" id="admin-projects-list">
+            <!-- Rendered by admin.js -->
+          </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- TAB: LEADS & CLIENT INQUIRIES -->
+        <!-- ========================================== -->
+        <section class="tab-pane" id="tab-inquiries">
+          <div class="section-title-bar">
+            <div>
+              <h2 class="pane-title">Client Leads &amp; Inquiries</h2>
+              <p class="pane-subtitle">Manage incoming project requests, video drive links, and client WhatsApp inquiries.</p>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+              <button type="button" class="admin-btn admin-btn-outline" id="btn-refresh-inquiries" title="Refresh leads list">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/></svg>
+                <span>Refresh</span>
+              </button>
+              <button type="button" class="admin-btn admin-btn-outline" id="btn-export-inquiries" title="Export inquiries as CSV spreadsheet">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>Export CSV</span>
+              </button>
+              <button type="button" class="admin-btn admin-btn-danger" id="btn-clear-inquiries" title="Clear all inquiries">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                <span>Clear All</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Metrics Bar -->
+          <div class="inquiry-metrics-grid">
+            <div class="metric-card">
+              <div class="metric-label">Total Inquiries</div>
+              <div class="metric-val" id="metric-inquiries-total">0</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">New / Unread</div>
+              <div class="metric-val text-cyan" id="metric-inquiries-new">0</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Contacted / Working</div>
+              <div class="metric-val text-green" id="metric-inquiries-contacted">0</div>
+            </div>
+          </div>
+
+          <!-- Filter & Search Toolbar -->
+          <div class="inquiries-toolbar">
+            <div class="inquiries-search-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <input type="text" id="inquiries-search-input" class="form-input" placeholder="Search by client name, email, style or drive link...">
+            </div>
+            <div class="inquiries-filter-pills" id="inquiries-filter-group">
+              <button type="button" class="filter-pill active" data-filter="all">All</button>
+              <button type="button" class="filter-pill" data-filter="new">New</button>
+              <button type="button" class="filter-pill" data-filter="contacted">Contacted</button>
+              <button type="button" class="filter-pill" data-filter="closed">Closed</button>
+            </div>
+          </div>
+
+          <!-- Inquiries List Container -->
+          <div class="inquiries-list-container" id="admin-inquiries-list">
+            <!-- Dynamically populated via admin.js -->
+          </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- TAB 2: BRAND & CONTACT -->
+        <!-- ========================================== -->
+        <section class="tab-pane" id="tab-brand">
+          <div class="section-title-bar">
+            <div>
+              <h2 class="pane-title">Brand, Bio & Contact Info</h2>
+              <p class="pane-subtitle">Update your personal details, WhatsApp contact, headlines, and social media handles.</p>
+            </div>
+          </div>
+
+          <form id="brand-form" class="admin-form-grid">
+            <div class="form-card">
+              <h3 class="form-card-title">Personal Profile</h3>
+              <div class="form-group">
+                <label>Your Full Name</label>
+                <input type="text" id="brand-name" class="form-input">
+              </div>
+              <div class="form-group">
+                <label>Professional Title</label>
+                <input type="text" id="brand-title" class="form-input">
+              </div>
+              <div class="form-group">
+                <label>Tagline / Hero Hook</label>
+                <input type="text" id="brand-tagline" class="form-input">
+              </div>
+              <div class="form-group">
+                <label>Experience Badge</label>
+                <input type="text" id="brand-experience" class="form-input">
+              </div>
+              <div class="form-group">
+                <label>Availability Status</label>
+                <input type="text" id="brand-availability" class="form-input">
+              </div>
+            </div>
+
+            <div class="form-card">
+              <h3 class="form-card-title">Contact & Social Links</h3>
+              <div class="form-group">
+                <label>WhatsApp Number (with country code, e.g. +91 92345 36469)</label>
+                <input type="text" id="brand-whatsapp" class="form-input">
+              </div>
+              <div class="form-group">
+                <label>Raw WhatsApp Number (digits only, e.g. 9234536469)</label>
+                <input type="text" id="brand-phoneRaw" class="form-input">
+              </div>
+              <div class="form-group">
+                <label>Display Phone Number</label>
+                <input type="text" id="brand-phone" class="form-input">
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="brand-email" class="form-input">
+              </div>
+            </div>
+
+            <div class="form-card" style="grid-column: 1 / -1;">
+              <h3 class="form-card-title">About Me Bio Text (HTML allowed)</h3>
+              <div class="form-group">
+                <label>Introduction Bio</label>
+                <textarea id="brand-aboutBio" class="form-textarea" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <label>Specialty Bio</label>
+                <textarea id="brand-aboutSpecialty" class="form-textarea" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <label>Current Roles & Experience</label>
+                <textarea id="brand-aboutExperience" class="form-textarea" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <label>Editing Philosophy</label>
+                <textarea id="brand-aboutPhilosophy" class="form-textarea" rows="3"></textarea>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- TAB 3: SERVICES -->
+        <!-- ========================================== -->
+        <section class="tab-pane" id="tab-services">
+          <div class="section-title-bar">
+            <div>
+              <h2 class="pane-title">Services & Offerings</h2>
+              <p class="pane-subtitle">Add or edit the service cards shown in the "What I Do" section.</p>
+            </div>
+            <button type="button" class="admin-btn admin-btn-primary" id="btn-add-service">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              <span>Add Service Card</span>
+            </button>
+          </div>
+
+          <div class="services-list-grid" id="admin-services-list">
+            <!-- Rendered by admin.js -->
+          </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- TAB 4: STATS & SHOWREEL -->
+        <!-- ========================================== -->
+        <section class="tab-pane" id="tab-stats">
+          <div class="section-title-bar">
+            <div>
+              <h2 class="pane-title">Stats Counters & Showreel</h2>
+              <p class="pane-subtitle">Control the numbers in the counter grid and the featured Showreel video.</p>
+            </div>
+          </div>
+
+          <div class="admin-form-grid">
+            <div class="form-card">
+              <h3 class="form-card-title">Stats Counters</h3>
+              <div id="admin-stats-list">
+                <!-- Rendered by admin.js -->
+              </div>
+            </div>
+
+            <div class="form-card">
+              <h3 class="form-card-title">Showreel Settings</h3>
+              <div class="form-group">
+                <label>Showreel Title</label>
+                <input type="text" id="showreel-title" class="form-input">
+              </div>
+              <div class="form-group">
+                <label>Showreel Subtitle</label>
+                <input type="text" id="showreel-subtitle" class="form-input">
+              </div>
+              <div class="form-group">
+                <label>Video File URL / Path</label>
+                <div class="input-with-select">
+                  <input type="text" id="showreel-videoUrl" class="form-input">
+                  <select id="showreel-video-select" class="form-select" style="max-width: 160px;">
+                    <option value="">Choose video...</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Resolution Badge (e.g. 4K 60FPS (9:16))</label>
+                <input type="text" id="showreel-resolution" class="form-input">
+              </div>
+              <div class="form-group">
+                <label>Year</label>
+                <input type="text" id="showreel-year" class="form-input">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- TAB 5: REVIEWS & FAQ -->
+        <!-- ========================================== -->
+        <section class="tab-pane" id="tab-reviews">
+          <div class="section-title-bar">
+            <div>
+              <h2 class="pane-title">Client Testimonials & FAQs</h2>
+              <p class="pane-subtitle">Edit creator testimonials and frequently asked questions.</p>
+            </div>
+            <button type="button" class="admin-btn admin-btn-primary" id="btn-add-faq">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              <span>Add FAQ</span>
+            </button>
+          </div>
+
+          <div class="admin-form-grid">
+            <div class="form-card" style="grid-column: 1 / -1;">
+              <h3 class="form-card-title">Client Testimonials</h3>
+              <div class="testimonials-admin-list" id="admin-testimonials-list">
+                <!-- Rendered by admin.js -->
+              </div>
+            </div>
+
+            <div class="form-card" style="grid-column: 1 / -1;">
+              <h3 class="form-card-title">Frequently Asked Questions</h3>
+              <div class="faq-admin-list" id="admin-faq-list">
+                <!-- Rendered by admin.js -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- TAB 6: BACKUP & SETTINGS -->
+        <!-- ========================================== -->
+        <section class="tab-pane" id="tab-backup">
+          <div class="section-title-bar">
+            <div>
+              <h2 class="pane-title">Data Backup & Export</h2>
+              <p class="pane-subtitle">Download clean copies of your data file or reset settings.</p>
+            </div>
+          </div>
+
+          <div class="admin-form-grid">
+            <div class="form-card">
+              <h3 class="form-card-title">Download data.js File</h3>
+              <p style="color: var(--admin-text-muted); font-size: 0.9rem; margin-bottom: 16px;">
+                Download an updated <code>data.js</code> file to deploy directly to Netlify, Vercel, or GitHub Pages.
+              </p>
+              <button type="button" class="admin-btn admin-btn-primary" id="btn-download-datajs">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>Download data.js</span>
+              </button>
+            </div>
+
+            <div class="form-card">
+              <h3 class="form-card-title">Security PIN Settings</h3>
+              <p style="color: var(--admin-text-muted); font-size: 0.9rem; margin-bottom: 16px;">
+                Change your Admin Security PIN (Stored securely in browser storage).
+              </p>
+              <div class="form-group">
+                <label>New Security PIN</label>
+                <input type="password" id="new-pin-input" class="form-input" placeholder="Enter new PIN">
+              </div>
+              <button type="button" class="admin-btn admin-btn-outline" id="btn-change-pin">
+                <span>Update PIN</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- PROJECT EDIT / ADD MODAL -->
+  <div class="modal-backdrop" id="project-modal-backdrop">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="project-modal-title">Edit Project</h3>
+        <button type="button" class="modal-close-btn" id="btn-close-project-modal">&times;</button>
+      </div>
+      <form id="project-edit-form" class="modal-body">
+        <input type="hidden" id="modal-project-id">
+        <input type="hidden" id="modal-project-index">
+
+        <div class="modal-form-grid">
+          <div class="form-group">
+            <label>Project / Reel Title</label>
+            <input type="text" id="modal-project-title" class="form-input" required>
+          </div>
+
+          <div class="form-group">
+            <label>Category</label>
+            <select id="modal-project-category" class="form-select">
+              <option value="motion-graphics">Motion Graphics</option>
+              <option value="talking-head">Talking Head</option>
+              <option value="speed-ramp">Speed Ramp</option>
+              <option value="transition-reel">Transition Reel</option>
+              <option value="podcast-clips">Podcast Clips</option>
+              <option value="cinematic-reels">Cinematic Reels</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label>Video File URL / Path</label>
+            <div class="input-with-select">
+              <input type="text" id="modal-project-videourl" class="form-input" required placeholder="public/videos/...">
+              <select id="modal-project-video-select" class="form-select" style="max-width: 220px;">
+                <option value="">Select from library...</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Tag / Hook Style (e.g. Dynamic Motion & VFX)</label>
+            <input type="text" id="modal-project-tag" class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label>Client / Series Name</label>
+            <input type="text" id="modal-project-client" class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label>Key Metrics (e.g. 4.2M Views • 94% Retention)</label>
+            <input type="text" id="modal-project-metrics" class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label>Duration (e.g. 0:30)</label>
+            <input type="text" id="modal-project-duration" class="form-input">
+          </div>
+
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label>Short Description</label>
+            <textarea id="modal-project-shortdesc" class="form-textarea" rows="2"></textarea>
+          </div>
+
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label>Techniques Used (comma-separated)</label>
+            <input type="text" id="modal-project-techniques" class="form-input">
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="admin-btn admin-btn-outline" id="btn-cancel-project-modal">Cancel</button>
+          <button type="submit" class="admin-btn admin-btn-primary">Save Project Details</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-stack" id="toast-stack"></div>
+
+  <!-- SCRIPTS -->
+  <script src="data.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

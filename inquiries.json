@@ -1,0 +1,54 @@
+﻿[
+    {
+        "id":  "inq_1788434000185",
+        "date":  "2026-09-03T11:13:20.185Z",
+        "dateFormatted":  "Sep 3, 2026, 04:43 PM",
+        "name":  "Priyank patel",
+        "email":  "sunnyth1212@gmail.com",
+        "phone":  "+919234536469",
+        "projectType":  "monthly-retainer",
+        "projectTypeLabel":  "Monthly Short Content Retainer",
+        "budget":  "$15 - $25",
+        "message":  "jehffh",
+        "status":  "new"
+    },
+    {
+        "id":  "inq_1788433650503",
+        "date":  "2026-09-03T11:07:30.502Z",
+        "dateFormatted":  "Sep 3, 2026, 04:37 PM",
+        "name":  "SUNNY",
+        "email":  "sunnyindia321@gmail.com",
+        "phone":  "+91 6437979134",
+        "projectType":  "cinematic-reels",
+        "projectTypeLabel":  "Cinematic Reels",
+        "budget":  "$15 - $25",
+        "message":  "Jaisbfbeis",
+        "status":  "new"
+    },
+    {
+        "id":  "inq_1788433229407",
+        "date":  "2026-09-03T11:00:29.407Z",
+        "dateFormatted":  "Sep 3, 2026, 04:30 PM",
+        "name":  "Sunny Thakur",
+        "email":  "sunnyth1212@gmail.com",
+        "phone":  "+919234536469",
+        "projectType":  "talking-head",
+        "projectTypeLabel":  "Talking Head Shorts",
+        "budget":  "$15 - $25",
+        "message":  "gfg",
+        "status":  "new"
+    },
+    {
+        "id":  "inq_welcome_lead",
+        "date":  "2026-09-03T10:45:00.000Z",
+        "dateFormatted":  "Sep 3, 2026, 04:15 PM",
+        "name":  "Rohan Mehta",
+        "email":  "rohan.mehta@creatorgrowth.com",
+        "phone":  "+91 98765 43210",
+        "projectType":  "instagram-reels",
+        "projectTypeLabel":  "Instagram Reels \u0026 TikTok Series",
+        "budget":  "$50 - $100",
+        "message":  "Hey Sunny! Loved your showreel. We need 15-20 high-retention podcast shorts and lifestyle reels edited every month with dynamic hooks, word-by-word captions, and sound effects.\n\nRaw footage folder: https://drive.google.com/drive/folders/sample-reels-footage",
+        "status":  "new"
+    }
+]

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <radialGradient id="cyberSky" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#1A0B2E"/>
+      <stop offset="40%" stop-color="#0B132B"/>
+      <stop offset="100%" stop-color="#05050A"/>
+    </radialGradient>
+    <linearGradient id="neonCyanGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00F59B" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#00E5FF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="goldGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF3366"/>
+      <stop offset="50%" stop-color="#FF9900"/>
+      <stop offset="100%" stop-color="#00F59B"/>
+    </linearGradient>
+    <filter id="cinematicBloom" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="15" flood-color="#00E5FF" flood-opacity="0.8"/>
+    </filter>
+    <filter id="neonPulse" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="25" flood-color="#FF007F" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Deep rich cinematic background -->
+  <rect width="1200" height="675" fill="url(#cyberSky)"/>
+
+  <!-- Anamorphic Lens Flare streak -->
+  <path d="M0 240 Q600 230 1200 240" stroke="#00E5FF" stroke-width="4" opacity="0.85" filter="url(#cinematicBloom)"/>
+  <ellipse cx="600" cy="235" rx="350" ry="12" fill="#00F59B" opacity="0.6" filter="url(#cinematicBloom)"/>
+  <circle cx="600" cy="235" r="45" fill="#FFFFFF" opacity="0.95" filter="url(#cinematicBloom)"/>
+
+  <!-- High-contrast architectural silhouettes with neon reflections -->
+  <rect x="250" y="220" width="140" height="320" fill="#0A0B10" stroke="#00E5FF" stroke-width="2" opacity="0.9"/>
+  <!-- Glowing windows in building -->
+  <g fill="#00F59B" opacity="0.8">
+    <rect x="270" y="250" width="20" height="35" rx="3"/>
+    <rect x="300" y="250" width="20" height="35" rx="3"/>
+    <rect x="330" y="250" width="20" height="35" rx="3"/>
+    <rect x="270" y="310" width="20" height="35" rx="3"/>
+    <rect x="330" y="310" width="20" height="35" rx="3"/>
+    <rect x="270" y="370" width="20" height="35" rx="3"/>
+    <rect x="300" y="370" width="20" height="35" rx="3"/>
+  </g>
+
+  <rect x="420" y="150" width="160" height="390" fill="#06070A" stroke="#FF007F" stroke-width="2.5" filter="url(#neonPulse)"/>
+  <!-- Japanese Neon Sign on Building -->
+  <text x="475" y="220" font-family="'Courier New', sans-serif" font-size="28" font-weight="900" fill="#FF007F" letter-spacing="8" filter="url(#neonPulse)">TOKYO</text>
+  <text x="480" y="280" font-family="sans-serif" font-size="20" font-weight="bold" fill="#00F59B" letter-spacing="4">2026</text>
+
+  <rect x="680" y="190" width="180" height="350" fill="#090A10" stroke="#00F59B" stroke-width="2"/>
+  <g fill="#FFB800" opacity="0.75">
+    <rect x="710" y="230" width="25" height="40" rx="3"/>
+    <rect x="750" y="230" width="25" height="40" rx="3"/>
+    <rect x="790" y="230" width="25" height="40" rx="3"/>
+    <rect x="710" y="300" width="25" height="40" rx="3"/>
+    <rect x="790" y="300" width="25" height="40" rx="3"/>
+  </g>
+
+  <rect x="920" y="240" width="150" height="300" fill="#0B0C12" stroke="#8B5CF6" stroke-width="1.5"/>
+
+  <!-- Wet asphalt ground reflection -->
+  <rect x="0" y="530" width="1200" height="145" fill="#05060A"/>
+  <ellipse cx="600" cy="560" rx="550" ry="40" fill="url(#goldGlow)" opacity="0.35" filter="url(#cinematicBloom)"/>
+  <path d="M0 530 L1200 530" stroke="#00F59B" stroke-width="2" opacity="0.7"/>
+
+  <!-- Color Grade UI Overlay -->
+  <rect x="40" y="40" width="280" height="48" rx="8" fill="#0C0D12" fill-opacity="0.9" stroke="#00F59B" stroke-width="1.5"/>
+  <circle cx="65" cy="64" r="6" fill="#00F59B"/>
+  <text x="85" y="70" font-family="'Courier New', monospace" font-size="15" font-weight="bold" fill="#00F59B">KODAK 2383 + TEAL/ORANGE</text>
+
+  <rect x="40" y="580" width="380" height="55" rx="8" fill="#0C0D12" fill-opacity="0.9" stroke="#2A2D3A"/>
+  <text x="60" y="605" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#FFFFFF">DAVINCI RESOLVE COLOR GRADE &amp; VFX</text>
+  <text x="60" y="623" font-family="'Courier New', monospace" font-size="12" fill="#00E5FF">Dynamic Range Expanded • Halation • 35mm Grain</text>
+
+  <!-- Master Quality Badge -->
+  <rect x="980" y="40" width="180" height="48" rx="8" fill="#0C0D12" fill-opacity="0.9" stroke="#FF007F" stroke-width="1.5"/>
+  <text x="1000" y="70" font-family="'Courier New', monospace" font-size="14" font-weight="bold" fill="#FF007F">MASTER 4K 60FPS</text>
+</svg>

@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunny Thakur — Short-Form Video Editor</title>
+  <meta name="description"
+    content="Portfolio of Sunny Thakur, a dedicated Short-Form Video Editor specializing in viral Instagram Reels, YouTube Shorts, and TikTok editing with high retention.">
+  <meta name="keywords"
+    content="Sunny Thakur, Short-Form Video Editor, Viral Reels, YouTube Shorts, TikTok Video Editor, Attractive Captions, Retention Editing, Premiere Pro, CapCut Pro">
+  <meta name="author" content="Sunny Thakur">
+  <meta name="theme-color" content="#08080a">
+
+  <link rel="canonical" href="https://sunnythakurportfolio.netlify.app/">
+  <!-- OpenGraph / Social Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sunnythakurportfolio.netlify.app/">
+  <meta property="og:title" content="Sunny Thakur — Short-Form Video Editor">
+  <meta property="og:description"
+    content="I craft viral, high-retention short-form videos (Reels, Shorts, TikTok) that stop the scroll and captivate audiences.">
+  <meta property="og:image" content="assets/after-grade.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Google Fonts: Plus Jakarta Sans, Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Ambient Cinematic Glows & Film Grain -->
+  <div class="film-grain" aria-hidden="true"></div>
+  <div class="bg-ambient-glow" aria-hidden="true">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+
+  <!-- =========================================================================
+       STICKY NAVBAR
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Sunny Thakur Portfolio Home">
+        <div class="brand-text-wrap">
+          <span class="brand-name" data-brand-name>Sunny Thakur</span>
+          <span class="brand-tagline">Video Editor</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#showreel" class="nav-link">Showreel</a></li>
+          <li><a href="#work" class="nav-link">Portfolio</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Light / Dark Theme Toggle Button -->
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle Light and Dark Mode"
+          title="Toggle Light / Dark Theme">
+          <svg class="theme-icon sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <div class="availability-badge" title="Currently open for freelance and contract projects">
+          <span class="pulse-dot"></span>
+          <span>Available for work</span>
+        </div>
+        <a href="#contact" class="btn btn-primary btn-sm">Hire Me</a>
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle Mobile Navigation Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <a href="#hero" class="nav-link">Home</a>
+    <a href="#showreel" class="nav-link">Showreel</a>
+    <a href="#work" class="nav-link">Portfolio</a>
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#reviews" class="nav-link">Reviews</a>
+    <a href="#faq" class="nav-link">FAQ</a>
+    <a href="#contact" class="nav-link">Contact</a>
+    <a href="#contact" class="btn btn-primary btn-lg" style="margin-top: 20px;">Let's Work Together</a>
+  </div>
+
+  <main>
+    <!-- =========================================================================
+         HERO SECTION
+         ========================================================================= -->
+    <section class="section hero-section" id="hero">
+      <!-- Unique Hero Background System (Aurora Orbs + Tech Grid Matrix) -->
+      <div class="hero-bg-canvas" aria-hidden="true">
+        <div class="hero-grid-pattern"></div>
+        <div class="hero-aurora-orb hero-orb-1"></div>
+        <div class="hero-aurora-orb hero-orb-2"></div>
+        <div class="hero-aurora-orb hero-orb-3"></div>
+      </div>
+
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-tag-badge">
+            <span class="pulse-dot"></span>
+            <span data-brand-tagline>I create videos that grab attention and keep viewers watching.</span>
+          </div>
+
+          <h1 class="hero-title">
+            Crafting viral short-form videos <br>
+            <span class="text-gradient">engineered for retention.</span>
+          </h1>
+
+          <p class="hero-description">
+            Short-Form Video Editor helping creators, podcasters, and founders turn raw footage into high-engagement
+            Reels, Shorts &amp; TikToks.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#work" class="btn btn-primary btn-lg">
+              <span>View Portfolio</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary btn-lg">
+              <span>Get in Touch</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         MARQUEE TICKER
+         ========================================================================= -->
+    <div class="marquee-container" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span class="marquee-item">Short-Form Content <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Viral Hooks <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Attractive Captions <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Retention Pacing <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Sound FX Pops <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Instagram Reels <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">YouTube Shorts <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">TikTok Edits <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Pattern Interrupts <span class="marquee-separator">•</span></span>
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <span class="marquee-item">Short-Form Content <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Viral Hooks <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Attractive Captions <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Retention Pacing <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Sound FX Pops <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Instagram Reels <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">YouTube Shorts <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">TikTok Edits <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Pattern Interrupts <span class="marquee-separator">•</span></span>
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <span class="marquee-item">Short-Form Content <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Viral Hooks <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Attractive Captions <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Retention Pacing <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Sound FX Pops <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Instagram Reels <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">YouTube Shorts <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">TikTok Edits <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Pattern Interrupts <span class="marquee-separator">•</span></span>
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <span class="marquee-item">Short-Form Content <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Viral Hooks <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Attractive Captions <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Retention Pacing <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Sound FX Pops <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Instagram Reels <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">YouTube Shorts <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">TikTok Edits <span class="marquee-separator">•</span></span>
+          <span class="marquee-item">Pattern Interrupts <span class="marquee-separator">•</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         SHOWREEL SECTION
+         ========================================================================= -->
+    <section class="section showreel-section" id="showreel">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">
+            <span class="section-tag-dot"></span>
+            <span>Showcase</span>
+          </div>
+          <h2 class="section-title">Short-Form Showreel</h2>
+          <p class="section-subtitle">A fast-paced preview of viral hooks, dynamic attractive captions, and high-retention
+            short-form edits.</p>
+        </div>
+
+        <div class="showreel-card reveal-scale" id="showreel-content-box">
+          <!-- Rendered dynamically by main.js from PORTFOLIO_DATA.showreel -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SELECTED WORK (PORTFOLIO GALLERY)
+         ========================================================================= -->
+    <section class="section portfolio-section" id="work">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">
+            <span class="section-tag-dot"></span>
+            <span>Portfolio</span>
+          </div>
+          <h2 class="section-title">Featured Portfolio</h2>
+          <p class="section-subtitle">High-retention 9:16 vertical projects engineered for algorithmic reach and
+            engagement.</p>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="portfolio-filters reveal-on-scroll" id="portfolio-filters">
+          <!-- Rendered dynamically from PORTFOLIO_DATA.categories -->
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="portfolio-grid reveal-on-scroll" id="portfolio-grid">
+          <!-- Rendered dynamically from PORTFOLIO_DATA.projects -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SERVICES SECTION ("WHAT I DO")
+         ========================================================================= -->
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">
+            <span class="section-tag-dot"></span>
+            <span>Services</span>
+          </div>
+          <h2 class="section-title">Short-Form Services</h2>
+          <p class="section-subtitle">Specialized short-form post-production designed to maximize average view duration
+            and subscriber growth.</p>
+        </div>
+
+        <div class="services-grid reveal-on-scroll" id="services-grid">
+          <!-- Rendered dynamically from PORTFOLIO_DATA.services -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         ABOUT ME & STATS SECTION
+         ========================================================================= -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Editor Portrait / Visual Card with 360 Glowing Border Motion -->
+          <div class="about-portrait-card reveal-left">
+            <div class="about-portrait-inner">
+              <img src="assets/sunny-thakur.jpg" alt="Sunny Thakur - Short-Form Video Editor" class="about-portrait-img">
+            </div>
+          </div>
+
+          <!-- Bio & Story -->
+          <div class="about-bio-col reveal-right">
+            <div class="section-tag">
+              <span class="section-tag-dot"></span>
+              <span>About Me</span>
+            </div>
+            <h2 class="about-title">Crafting Visuals with Purpose &amp; Impact</h2>
+
+            <p class="about-text" id="about-bio-text" style="margin-bottom: 14px;">
+              I’m <strong>Sunny Thakur</strong>, a passionate <strong>Video Editor with 3+ years of experience</strong>, turning raw footage &amp; creative ideas into engaging visual content.
+            </p>
+            <p class="about-text" id="about-bio-specialty" style="color: var(--text-body); margin-bottom: 14px;">
+              I specialize in <strong>Instagram Reels, YouTube Shorts, &amp; Cinematic Content</strong>. My editing focuses on strong hooks, smooth pacing, creative transitions, motion graphics, sound design, &amp; storytelling that keeps viewers engaged.
+            </p>
+            <p class="about-text" id="about-bio-experience" style="color: var(--text-body); margin-bottom: 14px;">
+              I’m a <strong>Video Editor for TEXWEB SOLUTION PVT. LTD. &amp; INTERNSHIP CATALYST</strong>, creating impactful &amp; engaging content that helps brands communicate their ideas &amp; connect with their audience.
+            </p>
+            <p class="about-text" id="about-bio-philosophy" style="color: var(--text-muted); margin-bottom: 14px;">
+              I believe good editing isn’t just about making a video look better — it’s about <strong>capturing attention, telling a story, &amp; making people want to watch until the end.</strong>
+            </p>
+            <p class="about-text" id="about-bio-cta"
+              style="color: var(--accent-neon-green); font-weight: 700; font-size: 1.02rem; margin-bottom: 24px;">
+              Let’s turn your vision into content that stands out.
+            </p>
+
+            <!-- Dynamic Stats Counters -->
+            <div class="stats-grid" id="stats-counter-grid">
+              <!-- Rendered dynamically from PORTFOLIO_DATA.stats -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         CLIENT TESTIMONIALS CAROUSEL
+         ========================================================================= -->
+    <section class="section testimonials-section" id="reviews">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">
+            <span class="section-tag-dot"></span>
+            <span>Feedback</span>
+          </div>
+          <h2 class="section-title">What Clients Say</h2>
+          <p class="section-subtitle">Direct feedback from creators, founders, and creative directors.</p>
+        </div>
+
+        <!-- Carousel Wrapper -->
+        <div class="testimonial-carousel-wrap reveal-scale">
+          <div class="testimonial-card-container">
+            <div class="testimonial-track" id="testimonial-track">
+              <!-- Testimonials rendered dynamically by main.js -->
+            </div>
+          </div>
+
+          <!-- Carousel Controls -->
+          <div class="carousel-controls">
+            <button class="carousel-btn prev" id="prev-testimonial-btn" aria-label="Previous Testimonial">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+            <div class="carousel-dots" id="testimonial-dots">
+              <!-- Dots rendered dynamically -->
+            </div>
+            <button class="carousel-btn next" id="next-testimonial-btn" aria-label="Next Testimonial">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         FAQ SECTION
+         ========================================================================= -->
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-tag">
+            <span class="section-tag-dot"></span>
+            <span>FAQ</span>
+          </div>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">Got questions? Here is everything you need to know about working together.</p>
+        </div>
+
+        <div class="faq-list reveal-on-scroll" id="faq-list">
+          <!-- Rendered dynamically from PORTFOLIO_DATA.faq -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         CONTACT & INQUIRY SECTION
+         ========================================================================= -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Info Column -->
+          <div class="contact-info-col reveal-left">
+            <div class="section-tag">
+              <span class="section-tag-dot"></span>
+              <span>Get In Touch</span>
+            </div>
+
+            <h2 class="contact-headline">
+              Let's create something <br>
+              <span class="text-gradient">extraordinary together.</span>
+            </h2>
+
+            <div class="contact-quote-badge">
+              <span class="quote-sparkle-icon">✦</span>
+              <p class="contact-quote-text">
+                Your content deserves more than views <span class="quote-dash">—</span> <span class="quote-highlight">it deserves attention.</span>
+              </p>
+            </div>
+
+            <!-- Direct Contact Card -->
+            <div class="direct-contact-card">
+              <div class="direct-item">
+                <div>
+                  <div class="direct-label">Phone / WhatsApp</div>
+                  <a href="tel:+919234536469" class="direct-val direct-link" data-brand-phone>+91 92345 36469</a>
+                </div>
+                <button class="copy-email-btn" id="copy-phone-btn">Copy Phone</button>
+              </div>
+
+              <div class="direct-item">
+                <div>
+                  <div class="direct-label">Email</div>
+                  <a href="mailto:sunnyindia321@gmail.com" class="direct-val direct-link" data-brand-email>sunnyindia321@gmail.com</a>
+                </div>
+                <button class="copy-email-btn" id="copy-email-btn">Copy Email</button>
+              </div>
+
+              <div class="direct-item">
+                <div>
+                  <div class="direct-label">Status</div>
+                  <div class="direct-val" style="color: var(--accent-neon-green);">● Accepting New Projects</div>
+                </div>
+                <span style="font-size: 0.78rem; color: var(--text-muted);">24–48h response</span>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links-row" id="contact-social-row">
+              <!-- Rendered dynamically from PORTFOLIO_DATA.socials -->
+            </div>
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <div class="contact-form-card reveal-right">
+            <form id="project-inquiry-form" novalidate>
+              <div class="form-group">
+                <label for="form-name" class="form-label">Your Name *</label>
+                <input type="text" id="form-name" class="form-input" placeholder="e.g. Alex Morgan" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-email" class="form-label">Your Email Address *</label>
+                <input type="email" id="form-email" class="form-input" placeholder="alex@brand.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-phone" class="form-label">Your WhatsApp / Phone Number <span style="color: var(--text-muted); font-size: 0.8rem; font-weight: normal;">(Optional - for quick reply)</span></label>
+                <input type="tel" id="form-phone" class="form-input" placeholder="+91 98765 43210">
+              </div>
+
+              <!-- Custom Project Category Dropdown -->
+              <div class="form-group custom-select-group">
+                <label class="form-label">Project Category *</label>
+                <input type="hidden" id="form-project-type" name="projectType" value="" required>
+                
+                <div class="custom-dropdown" id="custom-category-dropdown">
+                  <button type="button" class="custom-dropdown-trigger is-placeholder" id="category-dropdown-trigger" aria-haspopup="listbox" aria-expanded="false">
+                    <div class="trigger-content">
+                      <span class="trigger-icon-badge badge-sparkle" id="category-trigger-badge">
+                        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3Z"></path></svg>
+                      </span>
+                      <div class="trigger-text-wrap">
+                        <span class="trigger-title placeholder-text" id="category-trigger-title">What kind of reel service you want?</span>
+                        <span class="trigger-sub" id="category-trigger-sub">Tap to explore short-form editing styles &amp; packages</span>
+                      </div>
+                    </div>
+                    <div class="trigger-arrow">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                  </button>
+
+                  <div class="custom-dropdown-menu" id="category-dropdown-menu" role="listbox" tabindex="-1">
+                    <div class="dropdown-option" role="option" data-value="talking-head" data-title="Talking Head Shorts" data-sub="Hooks &amp; Attractive Captions" data-theme-color="cyan">
+                      <div class="option-icon-wrap icon-cyan">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+                      </div>
+                      <div class="option-info">
+                        <span class="option-title">Talking Head Shorts</span>
+                        <span class="option-desc">Hooks &amp; Attractive Captions</span>
+                      </div>
+                      <span class="option-check">✓</span>
+                    </div>
+
+                    <div class="dropdown-option" role="option" data-value="instagram-reels" data-title="Instagram Reels &amp; TikTok Series" data-sub="Viral Pacing &amp; Dynamic Cuts" data-theme-color="purple">
+                      <div class="option-icon-wrap icon-purple">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
+                      </div>
+                      <div class="option-info">
+                        <span class="option-title">Instagram Reels &amp; TikTok Series</span>
+                        <span class="option-desc">Viral Pacing &amp; Dynamic Cuts</span>
+                      </div>
+                      <span class="option-check">✓</span>
+                    </div>
+
+                    <div class="dropdown-option" role="option" data-value="cinematic-reels" data-title="Cinematic Reels" data-sub="Color Grading, Sound FX &amp; Story" data-theme-color="amber">
+                      <div class="option-icon-wrap icon-amber">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 8-6 4 6 4V8Z"></path><rect x="2" y="6" width="14" height="12" rx="2"></rect></svg>
+                      </div>
+                      <div class="option-info">
+                        <span class="option-title">Cinematic Reels</span>
+                        <span class="option-desc">Color Grading, Sound FX &amp; Story</span>
+                      </div>
+                      <span class="option-check">✓</span>
+                    </div>
+
+                    <div class="dropdown-option" role="option" data-value="transition-reel" data-title="Transition Reels" data-sub="Optical Flow, Velocity &amp; Speed Ramping" data-theme-color="green">
+                      <div class="option-icon-wrap icon-green">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                      </div>
+                      <div class="option-info">
+                        <span class="option-title">Transition Reels</span>
+                        <span class="option-desc">Optical Flow, Velocity &amp; Speed Ramping</span>
+                      </div>
+                      <span class="option-check">✓</span>
+                    </div>
+
+                    <div class="dropdown-option" role="option" data-value="workout-reels" data-title="Workout Reels" data-sub="Beat-Matched Pacing, Velocity &amp; Adrenaline" data-theme-color="cyan">
+                      <div class="option-icon-wrap icon-cyan">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6.5 6.5 11 11"></path><path d="m21 21-1-1a5 5 0 0 0-7.07 0l-.93.93"></path><path d="m3 3 1 1a5 5 0 0 0 7.07 0l.93-.93"></path><path d="m18 15 3-3"></path><path d="m9 6 3-3"></path><path d="m15 18 3-3"></path><path d="m6 9 3-3"></path></svg>
+                      </div>
+                      <div class="option-info">
+                        <span class="option-title">Workout Reels</span>
+                        <span class="option-desc">Beat-Matched Pacing, Velocity &amp; Adrenaline</span>
+                      </div>
+                      <span class="option-check">✓</span>
+                    </div>
+
+                    <div class="dropdown-option" role="option" data-value="monthly-retainer" data-title="Monthly Short Content Retainer" data-sub="Dedicated Pipeline (15–20 Shorts/mo)" data-theme-color="pink">
+                      <div class="option-icon-wrap icon-pink">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                      </div>
+                      <div class="option-info">
+                        <span class="option-title">Monthly Short Content Retainer</span>
+                        <span class="option-desc">Dedicated Pipeline (15–20 Shorts/mo)</span>
+                      </div>
+                      <span class="option-check">✓</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Budget Range Picker (Interactive Tier Cards) -->
+              <div class="form-group budget-select-group">
+                <div class="form-label-row">
+                  <label class="form-label">Estimated Budget</label>
+                  <span class="form-helper-badge">Select Investment Tier</span>
+                </div>
+                <input type="hidden" id="selected-budget-input" value="$3 - $5">
+                <div class="budget-options">
+                  <div class="budget-pill active" data-budget="$3 - $5">
+                    <div class="budget-pill-header">
+                      <span class="budget-amount">$3 – $5</span>
+                      <span class="budget-check-dot">✓</span>
+                    </div>
+                    <span class="budget-tier-label">Starter / Single Reel</span>
+                  </div>
+
+                  <div class="budget-pill" data-budget="$5 - $10">
+                    <div class="budget-pill-header">
+                      <span class="budget-amount">$5 – $10</span>
+                      <span class="budget-check-dot">✓</span>
+                    </div>
+                    <span class="budget-tier-label">Standard Pro Edit</span>
+                  </div>
+
+                  <div class="budget-pill" data-budget="$15 - $25">
+                    <div class="budget-pill-header">
+                      <span class="budget-amount">$15 – $25</span>
+                      <span class="budget-check-dot">✓</span>
+                    </div>
+                    <span class="budget-tier-label">Custom / Advanced Edit</span>
+                  </div>
+
+                  <div class="budget-pill" data-budget="$50 - $100">
+                    <div class="budget-pill-header">
+                      <span class="budget-amount">$50 – $100</span>
+                      <span class="budget-check-dot">✓</span>
+                    </div>
+                    <span class="budget-tier-label">Monthly Retainer</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project Details & Footage Links Textarea -->
+              <div class="form-group textarea-group">
+                <div class="form-label-row">
+                  <label for="form-message" class="form-label">Project Details &amp; Footage Links</label>
+                  <span class="form-helper-badge">Drive / Dropbox / WeTransfer</span>
+                </div>
+                <div class="textarea-card-wrapper">
+                  <textarea id="form-message" class="form-textarea"
+                    placeholder="Tell me about your project vision, target deadline, raw video link (Google Drive / Dropbox), and reference editing style..."
+                    required></textarea>
+                  <div class="textarea-card-footer">
+                    <span class="textarea-privacy-tag">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                      <span>100% Private &amp; Confidential</span>
+                    </span>
+                    <span class="textarea-status-tag">⚡ Fast Turnaround</span>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg"
+                style="width: 100%; justify-content: center; margin-top: 10px;">
+                <span>Send Project Inquiry</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-row">
+        <div class="footer-brand" data-brand-name>Sunny Thakur</div>
+        <p style="color: var(--text-muted); font-size: 0.92rem; margin: 0;">
+          Turning raw footage into visual stories that captivate audiences.
+        </p>
+        <a href="#hero" class="btn btn-secondary btn-sm">Back to Top ↑</a>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div>
+          © <span id="current-year">2026</span> Sunny Thakur. All rights reserved.
+        </div>
+        <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+          <a href="#work" style="color: var(--text-muted); font-size: 0.85rem;">Portfolio</a>
+          <a href="#showreel" style="color: var(--text-muted); font-size: 0.85rem;">Showreel</a>
+          <a href="#about" style="color: var(--text-muted); font-size: 0.85rem;">About</a>
+          <a href="#contact" style="color: var(--text-muted); font-size: 0.85rem;">Contact</a>
+          <a href="admin.html" style="color: var(--accent-neon-green); font-size: 0.85rem; display: inline-flex; align-items: center; gap: 5px; opacity: 0.85;" title="Admin Control Studio">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            <span>Admin</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       VIDEO CASE STUDY MODAL
+       ========================================================================= -->
+  <div class="modal-backdrop video-modal-backdrop" id="project-modal-backdrop" aria-hidden="true">
+    <div class="modal-content-card">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Project Modal">✕</button>
+
+      <!-- Video Container -->
+      <div id="modal-video-container" class="modal-video-wrap">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Case Study Body -->
+      <div class="modal-body">
+        <div class="modal-header-row">
+          <div>
+            <span class="section-tag" id="modal-category-badge" style="margin-bottom: 8px;">Featured</span>
+            <h2 class="modal-project-title" id="modal-title">Project Title</h2>
+          </div>
+        </div>
+
+        <div class="modal-details-grid">
+          <!-- Story & Techniques -->
+          <div>
+            <h4 style="font-size: 1.05rem; font-weight: 600; color: #fff; margin-bottom: 8px;">Project Overview</h4>
+            <p id="modal-story-val" style="color: var(--text-body); line-height: 1.65; margin-bottom: 24px;">Project
+              Story</p>
+
+            <h4 style="font-size: 1.05rem; font-weight: 600; color: #fff; margin-bottom: 8px;">Techniques &amp; Workflow
+            </h4>
+            <p id="modal-tech-val"
+              style="color: var(--accent-neon-green); font-size: 0.88rem; line-height: 1.6; background: rgba(0,245,155,0.06); padding: 14px 18px; border-radius: var(--radius-sm); border: 1px solid rgba(0,245,155,0.2);">
+              Techniques</p>
+          </div>
+
+          <!-- Metadata Sidebar -->
+          <div class="modal-info-panel">
+            <div class="info-row">
+              <span class="info-label">Client</span>
+              <span class="info-value" id="modal-client-val">Client Name</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Services</span>
+              <span class="info-value" id="modal-services-val">Video Editing, Color Grading</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Impact</span>
+              <span class="info-value" id="modal-metrics-val" style="color: var(--accent-neon-green);">+140%
+                Retention</span>
+            </div>
+            <div style="margin-top: 10px;">
+              <a href="#contact" class="btn btn-primary btn-sm" style="width: 100%;"
+                onclick="document.getElementById('modal-close-btn').click();">
+                Start a Project
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       INQUIRY CONFIRMATION & WHATSAPP MODAL
+       ========================================================================= -->
+  <div class="modal-backdrop" id="inquiry-success-modal" aria-hidden="true">
+    <div class="modal-content-card" style="max-width: 480px; text-align: center; padding: 36px 28px; background: rgba(14, 18, 28, 0.96); border: 1px solid rgba(0, 245, 160, 0.3); border-radius: var(--radius-lg); box-shadow: 0 25px 50px rgba(0,0,0,0.85), 0 0 35px rgba(0,245,160,0.15);">
+      <div style="width: 64px; height: 64px; margin: 0 auto 20px; background: rgba(0, 245, 160, 0.12); border: 1px solid rgba(0, 245, 160, 0.35); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent-neon-green);">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </div>
+      <h3 style="font-size: 1.45rem; font-weight: 700; color: #fff; margin-bottom: 10px;">✓ Inquiry Delivered!</h3>
+      <p style="color: var(--text-body); font-size: 0.92rem; line-height: 1.6; margin-bottom: 24px;">
+        Your project details and video links have been <strong style="color: var(--accent-neon-green);">automatically sent to Sunny's Email &amp; Admin Studio</strong>. Sunny will review your project and get back to you shortly!
+      </p>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <button type="button" id="inquiry-modal-close-btn" class="btn btn-primary" style="justify-content: center; font-weight: 700; padding: 14px 20px;">
+          <span>Done / Back to Website</span>
+        </button>
+        <a id="inquiry-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="justify-content: center; color: #25D366; border-color: rgba(37, 211, 102, 0.4); font-weight: 600;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          <span>Optional: Fast-Track on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
